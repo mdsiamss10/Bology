@@ -8,7 +8,7 @@ async function Home() {
   return (
     <>
       <div className="px-4 md:px-0 flex flex-col">
-        {session && <AddPost session={session} />}
+        {session && <AddPost />}
         <div className="divider mt-0"></div>
         <Posts />
       </div>

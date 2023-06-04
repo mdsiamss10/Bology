@@ -86,7 +86,7 @@ function AddPost() {
         </div>
         <div className="w-full flex flex-col justify-between items-center sm:flex-row">
           <span
-            className={`text-sm font-medium mb-2 sm:mb-0 ${
+            className={`text-sm font-medium my-2 sm:mb-0 ${
               textLength === maxTitleLength ? "text-red-500" : "text-green-500"
             }`}
           >

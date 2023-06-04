@@ -14,9 +14,7 @@ export const authOptions: AuthOptions = {
       issuer: process.env.AUTH0_ISSUER!,
       authorization: {
         params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
+          prompt: "login",
         },
       },
     }),

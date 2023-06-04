@@ -2,11 +2,10 @@
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
-import { Session } from "next-auth";
 import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
 
-function AddPost({ session }: { session: Session }) {
+function AddPost() {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const maxTitleLength = 280;
@@ -58,11 +57,14 @@ function AddPost({ session }: { session: Session }) {
         <div className="w-full mb-1">
           <textarea
             placeholder="What's on your mind?"
-            className="textarea textarea-bordered textarea-md h-24 w-full resize-none bg-[#f8f8f8]"
+            className="textarea textarea-bordered overflow-hidden textarea-md h-24 w-full resize-none bg-[#f8f8f8]"
             maxLength={maxTitleLength}
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            name="title"
+            onChange={(e) => {
+              setTitle(e.target.value);
+              e.target.style.height = "auto";
+              e.target.style.height = `${e.target.scrollHeight}px`;
+            }}
           />
         </div>
         <div className="w-full flex flex-col justify-between items-center sm:flex-row">

@@ -3,7 +3,6 @@ import axios from "axios";
 import moment from "moment";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import { BsFillCircleFill } from "react-icons/bs";
 import { toast } from "react-toastify";
 
 function Comment({
@@ -29,7 +28,7 @@ function Comment({
   const queryClient = useQueryClient();
   const { mutate } = useMutation(
     async (commentID: string) =>
-      await axios.post("/api/posts/deletePost", { postID, commentID }),
+      await axios.post("/api/posts/deleteComment", { postID, commentID }),
     {
       onSuccess: (data: any) => {
         toast.dismiss(comment.id);
@@ -57,14 +56,12 @@ function Comment({
             height={1000}
           />
           <div>
-            <div className="flex items-center gap-2">
+            <div>
               <h1>{comment?.user?.name}</h1>
-              <BsFillCircleFill size={6} className="text-gray-500 mt-1" />
-              <span className="text-gray-500 text-sm mt-[0.22rem]">
-                {moment(comment?.createdAt).fromNow()}
-              </span>
             </div>
-            <h1 className="text-sm text-gray-400">{comment?.user?.email}</h1>
+            <span className="text-gray-500 text-sm mt-[0.22rem]">
+              {moment(comment?.createdAt).fromNow()}
+            </span>
           </div>
         </div>
         {/* Second Section */}

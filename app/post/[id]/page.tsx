@@ -14,7 +14,11 @@ function CommentPage({ params: { id } }: { params: { id: string } }) {
     <>
       <div className="px-3">
         <PostItem {...data?.data} isInCommentPage={true} />
-        <AddComment id={id} {...data?.data} />
+        {isLoading ? (
+          <span className="loading loading-dots mt-3 text-center" />
+        ) : (
+          <AddComment id={id} {...data?.data} />
+        )}
       </div>
     </>
   );

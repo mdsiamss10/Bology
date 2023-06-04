@@ -8,7 +8,7 @@ async function Dashboard() {
   if (!session) redirect("/api/auth/signin");
   return (
     <>
-      <div>
+      <div className="px-3 md:px-0">
         <h1 className="text-2xl font-bold mt-2 mb-4">
           Welcome back, {session?.user?.name}
         </h1>

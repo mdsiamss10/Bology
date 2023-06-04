@@ -1,20 +1,20 @@
 export type PostItemProps = {
-  id: string;
-  title: string;
-  createdAt?: string;
-  isInDashboard?: boolean;
-  isInCommentPage?: boolean;
-  user: {
-    email: string;
-    id: string;
-    image: string;
-    name: string;
+  id?: string | undefined;
+  title?: string | undefined;
+  createdAt?: string | undefined;
+  isInDashboard?: boolean | undefined;
+  isInCommentPage?: boolean | undefined;
+  user?: {
+    email?: string;
+    id?: string;
+    image?: string;
+    name?: string;
   };
-  comments: {
+  comments?: {
     createdAt?: string;
     id: string;
     postId: string;
-    title: string;
+    comment: string;
     userId: string;
     user: {
       email: string;

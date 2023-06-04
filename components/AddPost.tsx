@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { Session } from "next-auth";
 import { FormEvent, useState } from "react";
@@ -9,14 +9,15 @@ import { toast } from "react-toastify";
 function AddPost({ session }: { session: Session }) {
   const [isDisabled, setIsDisabled] = useState(false);
 
-  const maxTitleLength = 120;
+  const maxTitleLength = 280;
   // Define title state
   const [title, setTitle] = useState("");
+
+  const queryClient = useQueryClient();
 
   // defining post submit mutations
   const { mutate } = useMutation(
     async (title: string) => {
-      console.log(title);
       await axios.post("/api/posts/addPost", { title });
     },
     {
@@ -28,6 +29,7 @@ function AddPost({ session }: { session: Session }) {
       },
       onSuccess: (data: any) => {
         toast.dismiss("creating"); // Close the "Creating" toast
+        queryClient.invalidateQueries(["getPosts"]);
         toast.success("Your thought just got it's life.😀");
         setTitle("");
         setIsDisabled(false);
@@ -50,7 +52,7 @@ function AddPost({ session }: { session: Session }) {
   };
 
   return (
-    <div className="flex flex-col bg-white p-4 rounded-md shadow-sm">
+    <div className="flex flex-col bg-white p-4 mb-4 rounded-md shadow-sm">
       <form onSubmit={handleSubmit}>
         {/* text area div */}
         <div className="w-full mb-1">

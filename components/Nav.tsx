@@ -7,7 +7,7 @@ import ProfileImage from "./ProfileImage";
 async function Nav() {
   const session = await getServerSession(authOptions);
   return (
-    <div className="flex sticky top-0 justify-between items-center py-4 backdrop-blur-md z-10">
+    <div className="flex sticky top-0 justify-between items-center py-4 px-3 md:px-0 backdrop-blur-md z-10">
       <Link className="text-xl font-semibold select-none bloggyText" href="/">
         Bologyy
       </Link>

@@ -8,11 +8,11 @@ import PostItem from "./PostItem";
 function Posts() {
   const { data, isLoading, isError } = useQuery<PostItemProps[]>({
     queryFn: async () => await axios.get("/api/posts/getPosts"),
-    queryKey: ["posts"],
+    queryKey: ["getPosts"],
   });
   if (isLoading) {
     return (
-      <span className="loading loading-dots text-gray-500 mx-auto mt-10 text-center w-24" />
+      <span className="loading loading-dots text-gray-700 mx-auto mt-10 text-center w-20" />
     );
   }
   if (isError) {
@@ -22,7 +22,6 @@ function Posts() {
       </h1>
     );
   }
-  console.log(data);
   return (
     <div className="mb-7">
       {/* @ts-ignore */}

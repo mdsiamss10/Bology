@@ -9,7 +9,7 @@ async function Home() {
     <>
       <div className="px-4 md:px-0 flex flex-col">
         {session && <AddPost session={session} />}
-        <div className="divider"></div>
+        <div className="divider mt-0"></div>
         <Posts />
       </div>
     </>

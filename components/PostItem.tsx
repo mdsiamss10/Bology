@@ -115,7 +115,7 @@ function PostItem({
         {!isInCommentPage && (
           <Link
             href={`/post/${id}`}
-            className="text-s font-bold text-green-600 cursor-pointer select-none"
+            className="text-s font-bold text-green-500 cursor-pointer select-none"
           >
             {comments?.length} - comments
           </Link>

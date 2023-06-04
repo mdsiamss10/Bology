@@ -63,7 +63,7 @@ function AddComment({ id, comments }: PostItemProps) {
           <div className="w-full mb-1">
             <textarea
               placeholder="What do you think about it?"
-              className="textarea textarea-bordered textarea-md h-20 w-full resize-none bg-[#f8f8f8]"
+              className="textarea textarea-bordered textarea-md h-20 w-full resize-none bg-[#f8f8f8] shadow-2xl shadow-stone-300/90"
               maxLength={maxTitleLength}
               value={comment}
               onChange={(e) => setComment(e.target.value)}
@@ -94,7 +94,7 @@ function AddComment({ id, comments }: PostItemProps) {
       {/* Comments Section */}
       {comments?.length !== 0 && (
         <div className="bg-[#f8f8f8] p-4 rounded-md">
-          <h1 className="mb-2 font-semibold">Comments:</h1>
+          <h1 className="mb-2 font-semibold">Comments: {comments?.length}</h1>
           {comments?.map((comment) => (
             <>
               <Comment key={comment.id} comment={comment} postID={id!} />

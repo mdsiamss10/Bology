@@ -83,7 +83,7 @@ function PostItem({
   };
 
   return (
-    <div className="mb-2 bg-white p-4 px-5 rounded-lg shadow-sm transition-all duration-1000">
+    <div className="mb-2 bg-white p-4 px-5 rounded-lg shadow-lg shadow-stone-300/30 transition-all duration-1000">
       <div>
         {/* First section */}
         <div className="flex gap-3 items-center">

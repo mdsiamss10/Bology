@@ -45,7 +45,7 @@ function Comment({
     }
   };
   return (
-    <div className="mb-2 bg-white p-4 px-5 rounded-lg shadow-sm">
+    <div className="mb-2 bg-white p-4 px-5 rounded-lg shadow-2xl shadow-stone-300/30">
       <div>
         {/* First section */}
         <div className="flex gap-3 items-center">

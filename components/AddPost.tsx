@@ -52,7 +52,7 @@ function AddPost({ session }: { session: Session }) {
   };
 
   return (
-    <div className="flex flex-col bg-white p-4 mb-4 rounded-md shadow-sm">
+    <div className="flex flex-col bg-white p-4 mb-4 rounded-md shadow-2xl shadow-stone-200/90">
       <form onSubmit={handleSubmit}>
         {/* text area div */}
         <div className="w-full mb-1">

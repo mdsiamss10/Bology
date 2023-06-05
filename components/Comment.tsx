@@ -65,13 +65,13 @@ function Comment({
           </div>
         </div>
         {/* Second Section */}
-        <div className="mt-3 ml-[3.78rem]">
+        <div className="mt-3">
           <h1>{comment?.comment}</h1>
         </div>
       </div>
       {/* If user is logged in show delete button */}
       {data?.user?.email == comment?.user?.email && (
-        <div className="ml-[3.78rem] mt-3 w-fit flex items-center gap-3">
+        <div className="mt-3 w-fit flex items-center gap-3">
           <h1
             className="text-sm font-bold text-red-500 cursor-pointer select-none"
             onClick={() => {

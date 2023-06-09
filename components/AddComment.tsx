@@ -93,7 +93,7 @@ function AddComment({ id, comments }: PostItemProps) {
       )}
       {/* Comments Section */}
       {comments?.length !== 0 && (
-        <div className="bg-[#f8f8f8] p-4 rounded-md shadow-2xl shadow-stone-300/50">
+        <div className="bg-[#f5f5f5] p-4 rounded-md">
           <h1 className="mb-2 font-semibold">Comments: {comments?.length}</h1>
           {comments?.map((comment) => (
             <>
